@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/YourUsername/CppAutomationRepo.git'
+                git 'https://github.com/AbhishekHerbertSamuel/CppAutomationRepo.git'
             }
         }
         stage('Compile C++ Program') {
