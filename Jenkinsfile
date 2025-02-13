@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        CC = "/opt/homebrew/bin/g++"  // Ensure it uses the correct compiler
+        CC = "/usr/bin/g++"  // Set the correct compiler path
     }
     stages {
         stage('Clone Repository') {
@@ -21,5 +21,3 @@ pipeline {
         }
     }
 }
-
-
