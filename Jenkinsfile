@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        CC = "/usr/bin/g++"  // Set the correct compiler path
-        CXX_INCLUDE_PATH = "/Library/Developer/CommandLineTools/usr/include/c++/v1"
+        CXX_INCLUDE_PATH = "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1"
     }
     stages {
         stage('Clone Repository') {
@@ -13,7 +12,7 @@ pipeline {
         stage('Compile C++ Program') {
             steps {
                 sh 'echo "Using C++ Standard Library Path: $CXX_INCLUDE_PATH"'
-                sh '$CC -I$CXX_INCLUDE_PATH -o hello hello.cpp'
+                sh 'g++ -I$CXX_INCLUDE_PATH -o hello hello.cpp'
             }
         }
         stage('Run C++ Program') {
